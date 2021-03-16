@@ -10,20 +10,47 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-4">
-            <h3>Bandera</h3>
-            <img [src]="pais.flag" class="img-thumbnail" alt="">
+    <div class="card col-md-8" style="width: 18rem;">
+        <img [src]="pais.flag" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{pais.name}}</h5>
+            <p class="card-text">{{pais.altSpellings}}</p>
         </div>
-        <div class="col">
-            <h3>Informacion</h3>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <strong>Poblacion</strong>{{pais.population | number}}
-                </li>
-            </ul>
-        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <strong>Poblacion: </strong>{{pais.population | number}}
+            </li>
+            <li class="list-group-item">
+                <strong>Codigo Numerico: </strong>{{pais.numericCode}}
+            </li>
+            <li class="list-group-item">
+                <strong>Codigo Alpha3: </strong>{{pais.alpha3Code}}
+            </li>
+        </ul>
     </div>
 
-</ng-template>
+    <div class="card mt-4">
+        <div class="card-header">
+          TRADUCCIONES
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <div class="col">
+                <span class="badge bg-dark m-1">{{pais.translations.de}}</span>
+                <span class="badge bg-dark m-1">{{pais.translations.es}}</span>
+                <span class="badge bg-dark m-1">{{pais.translations.fr}}</span>
+                <span class="badge bg-dark m-1">{{pais.translations.ja}}</span>
+                <span class="badge bg-dark m-1">{{pais.translations.it}}</span>
+                <span class="badge bg-dark m-1">{{pais.translations.br}}</span>
+                <span class="badge bg-dark m-1">{{pais.translations.pt}}</span>
+                <span class="badge bg-dark m-1">{{pais.translations.nl}}</span>
+                <span class="badge bg-dark m-1">{{pais.translations.fa}}</span>
+            </div>
+          </blockquote>
+        </div>
+      </div>
+    <!-- <pre class="mt-5">
+        {{pais | json}}
+    </pre> -->
 
+</ng-template>
